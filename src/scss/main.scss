@@ -1,0 +1,388 @@
+// include font -family from local system
+@font-face {
+    font-family: 'CitySansBook';
+    src: url('../font/ViceCitySans-Light.otf');
+}
+@font-face{
+    font-family: 'CitySansItalic';
+    src: url('../font/ViceCitySans-ItalicLight.otf');
+}
+@font-face{
+    font-family: 'CitySansBookBold';
+    src: url('../font/ViceCitySans-Bold.otf');
+}
+
+// style in root 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    $color:  #009e77;
+    $background-color:#00945f;
+    $background-color:#ebf7f5;
+    $font-family: "CitySansBook";
+}
+
+.container{
+    max-width: 95%;
+    margin: auto;
+}
+
+// scss mixin style for reusable
+@mixin padding{
+    padding: 4.5rem 0;
+}
+@mixin title{
+    font-size: 30px;
+    letter-spacing: 0px;
+    line-height: 31px;
+    color: #00945f;
+    font-family: "CitySansBook";
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+}
+@mixin titleAfter{
+    content: '';
+    position: absolute;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+    width: 80px;  
+    height: 2px;  
+    background-color:  #00945f; 
+    margin: auto;
+}
+@mixin paragraph{
+    font-size:16px;
+    letter-spacing: 0px;
+    line-height: 31px;
+    color: #888888;
+    font-family: "CitySansBook";
+}
+@mixin titlt-sm{
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 31px;
+    color: #00945f;
+    font-family: "CitySansBook";
+    margin-bottom: 1rem;
+}
+// for grid system row and column 
+.row{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 50px;
+    margin-top: 3.5rem;
+}
+
+nav{
+    padding: 2.5rem 0;
+        .nav-logo{
+            img{
+                max-width: 325px;
+                height: auto;
+                display: inline-block;
+            }
+        }   
+}
+.hero-sec{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    background-image: url(../images/image.jpg);
+    background-size: 140%; //keep image zoom for an object
+    background-position:60% 23%; //image position for object come on screen
+    background-repeat: no-repeat;
+    height:63vh; //viewport height 
+    .hero-right{
+            position: absolute;
+            right: 0px;
+            opacity: 0.8;
+            height: 100%;
+            width: 50%;
+            z-index: 1;
+            background-color: #005944;
+            transform-origin:0% 100%; // sets pivot point at bottom left corner
+            transform: skewX(-10deg); // slanted a div at 10deg
+    }
+}
+.investment-sec{
+    @include padding; //mixin scss
+    h2{
+        @include title;
+        &::after{
+           @include titleAfter;
+        }
+    }
+    p{
+        @include paragraph;
+    }
+    div{
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        button{
+            width: 165px;
+            height: 40px;
+            background-color: #e97300;
+            text-align: center;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'CitySansBook';
+        }
+    }
+}
+.cityzen-sec{
+    h2{
+        @include title;
+        &::after{
+            // used mixin
+            @include titleAfter; 
+        }
+    }
+    .row{
+        h3{
+            @include titlt-sm;
+        }
+        p{
+            @include paragraph;
+        }
+        div:nth-child(odd){ 
+                border-right: 1px solid #cfcfcf;
+                padding-right: 3rem;
+        }
+        div:nth-child(even){
+            padding-left: 3rem;
+        }
+        .learn-more{
+            text-decoration: none;
+            color: #80c107;
+            display: flex;
+            align-items: center;
+        }
+       
+    }
+}
+.citizen-bank-sec{
+    @include padding;
+    h2{
+        padding: 1rem;
+        background-color: #00945f;
+        font-size: 24px;
+        letter-spacing: 0px;
+        line-height: 31px;
+        color: #ffffff;
+        font-family: "CitySansBook";
+        text-align: center;
+    }
+    p{
+        font-size: 16px;
+        line-height: 31px;
+        color: #888888;
+        font-family: "CitySansBook";
+        background-color: #ebf7f5;
+        padding: 2rem 4rem;
+    }
+}
+.testimonial-sec{
+    padding: 0 4rem;
+    .row-flex{
+        display: flex;
+        gap: 150px;
+        width: 100%;
+        div{
+            text-align: center;
+            
+            img{
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            blockquote{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-content: space-between;
+                position: relative;
+                &::after{
+                    content: '“';
+                        position: absolute;
+                        font-size: 12rem;
+                        opacity: 0.1;
+                        top: -30px;
+                        left: -10px;
+                        z-index: -1;
+                    }
+
+                    p.quote{
+                        position: relative;
+                        margin:1rem 0; 
+                        q{
+                            font-size: 18px;
+                            letter-spacing: 0px;
+                            line-height: 29px;
+                            color: #666666;
+                            font-style: italic;
+                            font-family: "CitySansItalic";
+                            
+                        }
+                        
+                    }
+                    .name,.role{
+                        font-size: 18px;
+                        letter-spacing: 0px;
+                        line-height: 29px;
+                        color: #00945f;
+                        font-family: "CitySansBook";
+                        text-align: center;
+                    }
+                }
+                
+               
+            }
+        }
+        
+}
+.footer-sec{
+    padding: 2rem 0;
+    margin-top: 7rem;
+    border-top: 1.5px solid #00945f;
+    .disclaimer{
+        padding-bottom: 2rem;
+        p{
+            font-size: 12px;
+            color: #666666;
+            opacity: 0.8;
+            font-family: "Arial";
+            a{
+                color: #666666;
+                font-family: "Arial";
+            }
+        }
+    }
+    .social-icons{
+        margin:2rem 0;
+        ul{
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            li{
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            li .you-tube{
+                background-color: rgb(223, 29, 29);
+            }
+        }
+    }
+    .privacy{
+        display: flex;
+        gap: 15px;
+        justify-content: start;
+       a{
+            font-size: 14px;
+            line-height: 16px;
+            color: #000000;
+            font-family: "CitySansBookBold";
+            padding-right: 1rem;
+            text-decoration: none;
+       }
+       a:first-child{
+        border-right: 1px solid #000;
+       }
+    }
+}
+
+
+// mobile responsive upto 600px;
+@media  (max-width:600px) {
+    nav {
+        padding: 1.8rem 0;
+        text-align: center;
+        .nav-logo{
+            img{
+                max-width: 250px;
+            }
+        }
+    }
+    .hero-sec {
+        background-size: 250%;
+        background-position: 27% 23%;
+        background-repeat: no-repeat;
+        height: 250px;
+        .hero-right {
+            display: none;
+        }
+    }
+    .container{
+        width: 90%;
+    }
+    .row{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .cityzen-sec {
+        .row{
+            row-gap: 2rem;
+            div:nth-child(even),div:nth-child(odd) {
+                padding-left: 0;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #cfcfcf;
+            }
+            div:nth-child(odd) {
+                border-right: none;
+                padding-right: 0rem;
+            }
+            div:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+    .citizen-bank-sec {
+        padding: 0.5rem 0;
+        p{
+            padding: 1rem;
+        }
+    }
+    .testimonial-sec {
+        margin-top: 2rem;
+        .row-flex {
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+    }
+    .footer-sec{
+        margin-top: 5rem;
+        padding: 0.5rem 0 3rem 0;
+    }
+        
+}
+// mobile responsive end
+
+
+// responsive for other devices
+@media (min-width:601px) and (max-width:999px) {
+    .hero-sec {
+        height: 300px;
+    }
+    .testimonial-sec {
+        margin-top: 2rem;
+        .row-flex {
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+    }
+}
+
+

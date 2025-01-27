@@ -1,0 +1,363 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "CitySansBook";
+  src: url("../font/ViceCitySans-Light.otf");
+}
+@font-face {
+  font-family: "CitySansItalic";
+  src: url("../font/ViceCitySans-ItalicLight.otf");
+}
+@font-face {
+  font-family: "CitySansBookBold";
+  src: url("../font/ViceCitySans-Bold.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 95%;
+  margin: auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  row-gap: 50px;
+  margin-top: 3.5rem;
+}
+
+nav {
+  padding: 2.5rem 0;
+}
+nav .nav-logo img {
+  max-width: 325px;
+  height: auto;
+  display: inline-block;
+}
+
+.hero-sec {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  background-image: url(../images/image.jpg);
+  background-size: 140%;
+  background-position: 60% 23%;
+  background-repeat: no-repeat;
+  height: 63vh;
+}
+.hero-sec .hero-right {
+  position: absolute;
+  right: 0px;
+  opacity: 0.8;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  background-color: #005944;
+  transform-origin: 0% 100%;
+  transform: skewX(-10deg);
+}
+
+.investment-sec {
+  padding: 4.5rem 0;
+}
+.investment-sec h2 {
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #00945f;
+  font-family: "CitySansBook";
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+.investment-sec h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  width: 80px;
+  height: 2px;
+  background-color: #00945f;
+  margin: auto;
+}
+.investment-sec p {
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #888888;
+  font-family: "CitySansBook";
+}
+.investment-sec div {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.investment-sec div button {
+  width: 165px;
+  height: 40px;
+  background-color: #e97300;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 16px;
+  font-family: "CitySansBook";
+}
+
+.cityzen-sec h2 {
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #00945f;
+  font-family: "CitySansBook";
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+.cityzen-sec h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  width: 80px;
+  height: 2px;
+  background-color: #00945f;
+  margin: auto;
+}
+.cityzen-sec .row h3 {
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #00945f;
+  font-family: "CitySansBook";
+  margin-bottom: 1rem;
+}
+.cityzen-sec .row p {
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #888888;
+  font-family: "CitySansBook";
+}
+.cityzen-sec .row div:nth-child(odd) {
+  border-right: 1px solid #cfcfcf;
+  padding-right: 3rem;
+}
+.cityzen-sec .row div:nth-child(even) {
+  padding-left: 3rem;
+}
+.cityzen-sec .row .learn-more {
+  text-decoration: none;
+  color: #80c107;
+  display: flex;
+  align-items: center;
+}
+
+.citizen-bank-sec {
+  padding: 4.5rem 0;
+}
+.citizen-bank-sec h2 {
+  padding: 1rem;
+  background-color: #00945f;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 31px;
+  color: #ffffff;
+  font-family: "CitySansBook";
+  text-align: center;
+}
+.citizen-bank-sec p {
+  font-size: 16px;
+  line-height: 31px;
+  color: #888888;
+  font-family: "CitySansBook";
+  background-color: #ebf7f5;
+  padding: 2rem 4rem;
+}
+
+.testimonial-sec {
+  padding: 0 4rem;
+}
+.testimonial-sec .row-flex {
+  display: flex;
+  gap: 150px;
+  width: 100%;
+}
+.testimonial-sec .row-flex div {
+  text-align: center;
+}
+.testimonial-sec .row-flex div img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonial-sec .row-flex div blockquote {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  position: relative;
+}
+.testimonial-sec .row-flex div blockquote::after {
+  content: "“";
+  position: absolute;
+  font-size: 12rem;
+  opacity: 0.1;
+  top: -30px;
+  left: -10px;
+  z-index: -1;
+}
+.testimonial-sec .row-flex div blockquote p.quote {
+  position: relative;
+  margin: 1rem 0;
+}
+.testimonial-sec .row-flex div blockquote p.quote q {
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 29px;
+  color: #666666;
+  font-style: italic;
+  font-family: "CitySansItalic";
+}
+.testimonial-sec .row-flex div blockquote .name, .testimonial-sec .row-flex div blockquote .role {
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 29px;
+  color: #00945f;
+  font-family: "CitySansBook";
+  text-align: center;
+}
+
+.footer-sec {
+  padding: 2rem 0;
+  margin-top: 7rem;
+  border-top: 1.5px solid #00945f;
+}
+.footer-sec .disclaimer {
+  padding-bottom: 2rem;
+}
+.footer-sec .disclaimer p {
+  font-size: 12px;
+  color: #666666;
+  opacity: 0.8;
+  font-family: "Arial";
+}
+.footer-sec .disclaimer p a {
+  color: #666666;
+  font-family: "Arial";
+}
+.footer-sec .social-icons {
+  margin: 2rem 0;
+}
+.footer-sec .social-icons ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+.footer-sec .social-icons ul li img {
+  width: 40px;
+  height: 40px;
+}
+.footer-sec .social-icons ul li .you-tube {
+  background-color: rgb(223, 29, 29);
+}
+.footer-sec .privacy {
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+}
+.footer-sec .privacy a {
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  font-family: "CitySansBookBold";
+  padding-right: 1rem;
+  text-decoration: none;
+}
+.footer-sec .privacy a:first-child {
+  border-right: 1px solid #000;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 1.8rem 0;
+    text-align: center;
+  }
+  nav .nav-logo img {
+    max-width: 250px;
+  }
+  .hero-sec {
+    background-size: 250%;
+    background-position: 27% 23%;
+    background-repeat: no-repeat;
+    height: 250px;
+  }
+  .hero-sec .hero-right {
+    display: none;
+  }
+  .container {
+    width: 90%;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .cityzen-sec .row {
+    row-gap: 2rem;
+  }
+  .cityzen-sec .row div:nth-child(even), .cityzen-sec .row div:nth-child(odd) {
+    padding-left: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #cfcfcf;
+  }
+  .cityzen-sec .row div:nth-child(odd) {
+    border-right: none;
+    padding-right: 0rem;
+  }
+  .cityzen-sec .row div:last-child {
+    border-bottom: none;
+  }
+  .citizen-bank-sec {
+    padding: 0.5rem 0;
+  }
+  .citizen-bank-sec p {
+    padding: 1rem;
+  }
+  .testimonial-sec {
+    margin-top: 2rem;
+  }
+  .testimonial-sec .row-flex {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .footer-sec {
+    margin-top: 5rem;
+    padding: 0.5rem 0 3rem 0;
+  }
+}
+@media (min-width: 601px) and (max-width: 999px) {
+  .hero-sec {
+    height: 300px;
+  }
+  .testimonial-sec {
+    margin-top: 2rem;
+  }
+  .testimonial-sec .row-flex {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}/*# sourceMappingURL=main.css.map */
