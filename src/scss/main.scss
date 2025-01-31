@@ -86,9 +86,9 @@
 // for grid system row and column 
 .row{
     display: grid; 
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 6rem;
+    grid-template-columns: 1fr 1fr; //give the columns into two parts with 2 equal width
+    grid-template-rows: auto auto; // two rows with auto adjust
+    row-gap: 6rem; //give the gab bwetween rows
     margin-top: 3.5rem;
 }
 
@@ -96,7 +96,7 @@
 nav{
     padding: 3.3rem 0;
         .nav-logo{
-            img{
+            img{ //styles for logo image
                 width: 317px;
                 height: 35px;
                 display: inline-block;
@@ -109,22 +109,22 @@ nav{
 // hero section style start
 .hero-sec{
     position: relative;
-    overflow: hidden;
-    width: 100%;
+    overflow: hidden; //overflow hide 
+    width: 100%; 
     max-width: 100%;
-    display: grid; 
+    display: grid; //display grid format
     background-image: url(../images/image.jpg);
     background-size: 140%; //keep image zoom for an object
     background-position:60% 23%; //image position for object come on screen
     background-repeat: no-repeat;
     height:63vh; //viewport height 
-    .hero-right{
-            position: absolute;
+    .hero-right{ //style for slanted area
+            position: absolute; 
             right: 0px;
-            opacity: 0.8;
+            opacity: 0.8; //give opacity 
             height: 100%;
             width: 50%;
-            z-index: 1;
+            z-index: 1; //z-inde for visible over div
             background-color: #005944;
             transform-origin:0% 100%; // sets pivot point at bottom left corner
             transform: skewX(-10deg); // slanted a div at 10deg
@@ -148,7 +148,7 @@ nav{
         margin-top: 2rem;
         display: flex;
         justify-content: center;
-        button{
+        button{ //style for button
             width: 165px;
             height: 40px;
             background-color: #e97300;
@@ -165,7 +165,7 @@ nav{
 // citizen section style start
 .cityzen-sec{
     h2{
-        @include title;
+        @include title; // include mixin property use
         &::after{
             // used mixin
             @include titleAfter; 
@@ -236,14 +236,14 @@ nav{
                 border-radius: 50%;
                 object-fit: cover;
             }
-            blockquote{
+            blockquote{ //style for quote text
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
                 align-content: space-between;
                 position: relative;
                 font-family: initial;
-                &::after{
+                &::after{ //style for quote image
                     content: '“';
                         position: absolute;
                         font-size: 12rem;
@@ -267,7 +267,7 @@ nav{
                         }
                         
                     }
-                    .name,.role{
+                    .name,.role{ //style for name & their role
                         font-size: 18px;
                         letter-spacing: 0px;
                         line-height: 29px;
@@ -302,7 +302,7 @@ nav{
             }
         }
     }
-    .social-icons{
+    .social-icons{ //style for social icons section
         margin:1.5rem 0;
         ul{
             list-style-type: none;
@@ -319,7 +319,7 @@ nav{
             }
         }
     }
-    .privacy{
+    .privacy{ // styles for privacy text para
         display: flex;
         gap: 15px;
         justify-content: start;
