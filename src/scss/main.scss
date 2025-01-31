@@ -1,16 +1,18 @@
-// include font -family from local system
+
+// to add custom font family
 @font-face {
-    font-family: 'CitySansBook';
-    src: url('../font/ViceCitySans-Light.otf');
-}
-@font-face{
-    font-family: 'CitySansItalic';
-    src: url('../font/ViceCitySans-ItalicLight.otf');
-}
-@font-face{
-    font-family: 'CitySansBookBold';
-    src: url('../font/ViceCitySans-Bold.otf');
-}
+    font-family: "CitySansBook"; // custom font name
+    src: url("../font/ViceCitySans-Light.otf"); // give relative path for font
+  }
+  @font-face {
+    font-family: "CitySansItalic";
+    src: url("../font/ViceCitySans-ItalicLight.otf");
+  }
+  @font-face {
+    font-family: "CitySansBookBold";
+    src: url("../font/ViceCitySans-Bold.otf");
+  }
+// adding custom font family  style end
 
 // style in root 
 *{
@@ -20,18 +22,22 @@
     $color:  #009e77;
     $background-color:#00945f;
     $background-color:#ebf7f5;
-    $font-family: "CitySansBook";
+    font-family: "CitySansBook";
 }
 
+// give container width 
 .container{
     max-width: 95%;
     margin: auto;
 }
 
 // scss mixin style for reusable
-@mixin padding{
+
+@mixin padding{ //mixing for resuable paading
     padding: 4.5rem 0;
 }
+
+// resuable title font style
 @mixin title{
     font-size: 30px;
     letter-spacing: 0px;
@@ -44,6 +50,8 @@
     padding-bottom: 1.2rem;
     margin-bottom: 2rem;
 }
+
+// to give underline for a text
 @mixin titleAfter{
     content: '';
     position: absolute;
@@ -55,13 +63,17 @@
     background-color:  #00945f; 
     margin: auto;
 }
+
+// paragraph style
 @mixin paragraph{
-    font-size:16px;
+    font-size:30px;
     letter-spacing: 0px;
-    line-height: 31px;
+    line-height: 50px;
     color: #888888;
     font-family: "CitySansBook";
 }
+
+// small paragraph style
 @mixin titlt-sm{
     font-size: 24px;
     letter-spacing: 0px;
@@ -70,31 +82,37 @@
     font-family: "CitySansBook";
     margin-bottom: 1rem;
 }
+
 // for grid system row and column 
 .row{
     display: grid; 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    row-gap: 50px;
+    row-gap: 6rem;
     margin-top: 3.5rem;
 }
 
+// styles for nav menu
 nav{
-    padding: 2.5rem 0;
+    padding: 3.3rem 0;
         .nav-logo{
             img{
-                max-width: 325px;
-                height: auto;
+                width: 317px;
+                height: 35px;
                 display: inline-block;
             }
         }   
 }
+// end nav menu styles
+
+
+// hero section style start
 .hero-sec{
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
-    display: grid;
+    display: grid; 
     background-image: url(../images/image.jpg);
     background-size: 140%; //keep image zoom for an object
     background-position:60% 23%; //image position for object come on screen
@@ -112,19 +130,22 @@ nav{
             transform: skewX(-10deg); // slanted a div at 10deg
     }
 }
+// hero section style end
+
+// investment section style start
 .investment-sec{
     @include padding; //mixin scss
     h2{
         @include title;
         &::after{
-           @include titleAfter;
+           @include titleAfter; //used mixin property
         }
     }
     p{
-        @include paragraph;
+        @include paragraph; //used mixin property
     }
     div{
-        margin-top: 1.5rem;
+        margin-top: 2rem;
         display: flex;
         justify-content: center;
         button{
@@ -135,11 +156,13 @@ nav{
             border: 0;
             outline: 0;
             color: #fff;
-            font-size: 16px;
-            font-family: 'CitySansBook';
+            font-size: 24px;
         }
     }
 }
+// investment section style end
+
+// citizen section style start
 .cityzen-sec{
     h2{
         @include title;
@@ -153,11 +176,13 @@ nav{
             @include titlt-sm;
         }
         p{
-            @include paragraph;
+            font-size: 18px;
+            line-height: 31px;
+            color: #888888;
         }
         div:nth-child(odd){ 
                 border-right: 1px solid #cfcfcf;
-                padding-right: 3rem;
+                padding-right: 2.5rem;
         }
         div:nth-child(even){
             padding-left: 3rem;
@@ -165,12 +190,15 @@ nav{
         .learn-more{
             text-decoration: none;
             color: #80c107;
-            display: flex;
+            display: inline-flex;
             align-items: center;
         }
        
     }
 }
+// citizen section style end
+
+// citizen-bank section style start
 .citizen-bank-sec{
     @include padding;
     h2{
@@ -180,18 +208,19 @@ nav{
         letter-spacing: 0px;
         line-height: 31px;
         color: #ffffff;
-        font-family: "CitySansBook";
         text-align: center;
     }
     p{
-        font-size: 16px;
+        font-size: 18px;
         line-height: 31px;
         color: #888888;
-        font-family: "CitySansBook";
         background-color: #ebf7f5;
         padding: 2rem 4rem;
     }
 }
+// citizen-bank section style end
+
+// testimonial section style start
 .testimonial-sec{
     padding: 0 4rem;
     .row-flex{
@@ -213,6 +242,7 @@ nav{
                 flex-wrap: wrap;
                 align-content: space-between;
                 position: relative;
+                font-family: initial;
                 &::after{
                     content: '“';
                         position: absolute;
@@ -252,6 +282,9 @@ nav{
         }
         
 }
+// testimonial section style end
+
+// footer section style start
 .footer-sec{
     padding: 2rem 0;
     margin-top: 7rem;
@@ -259,7 +292,7 @@ nav{
     .disclaimer{
         padding-bottom: 2rem;
         p{
-            font-size: 12px;
+            font-size: 11px;
             color: #666666;
             opacity: 0.8;
             font-family: "Arial";
@@ -270,15 +303,15 @@ nav{
         }
     }
     .social-icons{
-        margin:2rem 0;
+        margin:1.5rem 0;
         ul{
             list-style-type: none;
             display: flex;
             gap: 15px;
             li{
                 img{
-                    width: 40px;
-                    height: 40px;
+                    width: 28px;
+                    height: 28px;
                 }
             }
             li .you-tube{
@@ -303,16 +336,18 @@ nav{
        }
     }
 }
+// footer section style end
 
 
-// mobile responsive upto 600px;
+// mobile responsive upto 600px; 
 @media  (max-width:600px) {
     nav {
-        padding: 1.8rem 0;
+         padding: 1.4rem 0;
         text-align: center;
         .nav-logo{
             img{
-                max-width: 250px;
+                max-width: 173px;
+                height: 19px;
             }
         }
     }
@@ -320,7 +355,7 @@ nav{
         background-size: 250%;
         background-position: 27% 23%;
         background-repeat: no-repeat;
-        height: 250px;
+        height: 202px;
         .hero-right {
             display: none;
         }
@@ -332,12 +367,20 @@ nav{
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
+    .investment-sec{
+        padding: 3rem 0;
+        p {
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 38px;
+        }
+    }
     .cityzen-sec {
         .row{
-            row-gap: 2rem;
+            row-gap: 1.5rem;
             div:nth-child(even),div:nth-child(odd) {
                 padding-left: 0;
-                padding-bottom: 2rem;
+                padding-bottom: 1.5rem;
                 border-bottom: 1px solid #cfcfcf;
             }
             div:nth-child(odd) {
@@ -364,14 +407,56 @@ nav{
     }
     .footer-sec{
         margin-top: 5rem;
-        padding: 0.5rem 0 3rem 0;
+        padding: 0.5rem 0 2rem 0;
+            .social-icons{
+                ul {
+                    gap: 10px;
+                }
+            }
+
+        .privacy a {
+                font-size: 12px;
+        }    
     }
         
 }
+
+// media for mobile upto 375px  (hero section)
+@media (max-width:375px){
+    .hero-sec {
+        background-size: 250%;
+        background-position: 27% 23%;
+        background-repeat: no-repeat;
+        height: 202px;
+    }
+}
+
+// responsive for mobile resolution between 375px and 425px (hero section) 
+@media (min-width:375px) and (max-width:425px) {
+    .hero-sec {
+        height: 250px;
+    }
+}
+
+
+// responsive for mobile resolution between 426px and 500px  (hero section)
+@media (min-width:426px) and (max-width:500px) {
+    .hero-sec {
+        height: 270px;
+    }
+}
+
+// responsive for mobile resolution between 501px and 600px (hero section)
+@media (min-width:501px) and (max-width:600px) {
+    .hero-sec {
+        height: 290px;
+    }
+}
+
 // mobile responsive end
 
 
-// responsive for other devices
+// responsive for other devices between tablet to larger laptop
 @media (min-width:601px) and (max-width:999px) {
     .hero-sec {
         height: 300px;
@@ -384,5 +469,5 @@ nav{
         }
     }
 }
-
+// responsive end
 

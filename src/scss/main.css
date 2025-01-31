@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "CitySansBook";
 }
 
 .container {
@@ -26,16 +27,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  row-gap: 50px;
+  row-gap: 6rem;
   margin-top: 3.5rem;
 }
 
 nav {
-  padding: 2.5rem 0;
+  padding: 3.3rem 0;
 }
 nav .nav-logo img {
-  max-width: 325px;
-  height: auto;
+  width: 317px;
+  height: 35px;
   display: inline-block;
 }
 
@@ -90,14 +91,14 @@ nav .nav-logo img {
   margin: auto;
 }
 .investment-sec p {
-  font-size: 16px;
+  font-size: 30px;
   letter-spacing: 0px;
-  line-height: 31px;
+  line-height: 50px;
   color: #888888;
   font-family: "CitySansBook";
 }
 .investment-sec div {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
@@ -109,8 +110,7 @@ nav .nav-logo img {
   border: 0;
   outline: 0;
   color: #fff;
-  font-size: 16px;
-  font-family: "CitySansBook";
+  font-size: 24px;
 }
 
 .cityzen-sec h2 {
@@ -145,15 +145,13 @@ nav .nav-logo img {
   margin-bottom: 1rem;
 }
 .cityzen-sec .row p {
-  font-size: 16px;
-  letter-spacing: 0px;
+  font-size: 18px;
   line-height: 31px;
   color: #888888;
-  font-family: "CitySansBook";
 }
 .cityzen-sec .row div:nth-child(odd) {
   border-right: 1px solid #cfcfcf;
-  padding-right: 3rem;
+  padding-right: 2.5rem;
 }
 .cityzen-sec .row div:nth-child(even) {
   padding-left: 3rem;
@@ -161,7 +159,7 @@ nav .nav-logo img {
 .cityzen-sec .row .learn-more {
   text-decoration: none;
   color: #80c107;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -175,14 +173,12 @@ nav .nav-logo img {
   letter-spacing: 0px;
   line-height: 31px;
   color: #ffffff;
-  font-family: "CitySansBook";
   text-align: center;
 }
 .citizen-bank-sec p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 31px;
   color: #888888;
-  font-family: "CitySansBook";
   background-color: #ebf7f5;
   padding: 2rem 4rem;
 }
@@ -211,6 +207,7 @@ nav .nav-logo img {
   flex-wrap: wrap;
   align-content: space-between;
   position: relative;
+  font-family: initial;
 }
 .testimonial-sec .row-flex div blockquote::after {
   content: "“";
@@ -251,7 +248,7 @@ nav .nav-logo img {
   padding-bottom: 2rem;
 }
 .footer-sec .disclaimer p {
-  font-size: 12px;
+  font-size: 11px;
   color: #666666;
   opacity: 0.8;
   font-family: "Arial";
@@ -261,7 +258,7 @@ nav .nav-logo img {
   font-family: "Arial";
 }
 .footer-sec .social-icons {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 .footer-sec .social-icons ul {
   list-style-type: none;
@@ -269,8 +266,8 @@ nav .nav-logo img {
   gap: 15px;
 }
 .footer-sec .social-icons ul li img {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
 }
 .footer-sec .social-icons ul li .you-tube {
   background-color: rgb(223, 29, 29);
@@ -294,17 +291,18 @@ nav .nav-logo img {
 
 @media (max-width: 600px) {
   nav {
-    padding: 1.8rem 0;
+    padding: 1.4rem 0;
     text-align: center;
   }
   nav .nav-logo img {
-    max-width: 250px;
+    max-width: 173px;
+    height: 19px;
   }
   .hero-sec {
     background-size: 250%;
     background-position: 27% 23%;
     background-repeat: no-repeat;
-    height: 250px;
+    height: 202px;
   }
   .hero-sec .hero-right {
     display: none;
@@ -316,12 +314,20 @@ nav .nav-logo img {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  .investment-sec {
+    padding: 3rem 0;
+  }
+  .investment-sec p {
+    font-size: 26px;
+    letter-spacing: 0px;
+    line-height: 38px;
+  }
   .cityzen-sec .row {
-    row-gap: 2rem;
+    row-gap: 1.5rem;
   }
   .cityzen-sec .row div:nth-child(even), .cityzen-sec .row div:nth-child(odd) {
     padding-left: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid #cfcfcf;
   }
   .cityzen-sec .row div:nth-child(odd) {
@@ -346,7 +352,36 @@ nav .nav-logo img {
   }
   .footer-sec {
     margin-top: 5rem;
-    padding: 0.5rem 0 3rem 0;
+    padding: 0.5rem 0 2rem 0;
+  }
+  .footer-sec .social-icons ul {
+    gap: 10px;
+  }
+  .footer-sec .privacy a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  .hero-sec {
+    background-size: 250%;
+    background-position: 27% 23%;
+    background-repeat: no-repeat;
+    height: 202px;
+  }
+}
+@media (min-width: 375px) and (max-width: 425px) {
+  .hero-sec {
+    height: 250px;
+  }
+}
+@media (min-width: 426px) and (max-width: 500px) {
+  .hero-sec {
+    height: 270px;
+  }
+}
+@media (min-width: 501px) and (max-width: 600px) {
+  .hero-sec {
+    height: 290px;
   }
 }
 @media (min-width: 601px) and (max-width: 999px) {
